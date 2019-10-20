@@ -17,23 +17,49 @@
 <body class="view"
     style="background-image: url('assets/images/catinspace.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
 
-    <div class="container-fluid">
+    <div class=" container-fluid">
         <div class="row justify-content-center">
             <div class="col-3">
-                <audio controls loop class="row justify-content-center m-2">
+                <audio controls loop class="row justify-content-center m-3">
                     <source src="assets/images/Kittycat.mp3" type="audio/mp3"></audio>
             </div>
         </div>
         <div class="row d-flex justify-content-center" align="center">
-            <div class="jumbotron col-8" id="startScreen">
+            <div class="jumbotron col-6">
                 <h1 class="text-align-center border-dark b-1 m-4">My Super Catastic Trivia Game!
                 </h1>
-                <p class="text-align-center">You have 90 seconds to answer all the questions</p>
+                <p class="text-align-center">You have 5 seconds to answer each question</p>
                 <img src="assets/images/catinspace2.jpg" alt="cat in space">
                 <br>
-                <p class="text-align-center">Click Meow to begin!</p>
+                <p class="text-align-center">Click meow to begin!</p>
 
                 <button type="button" class="btn btn-success text-align-center" id="start-btn">Meow!</button>
+            </div>
+        </div>
+        <div class="row  d-flex justify-content-center pt-5">
+            <div class="col-4">
+                <div class="card">
+                    <div id="ques-disp" class="card-header text-center">
+                        Hi
+                    </div>
+
+                    <div>
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item" id="ans1"></li>
+                            <li class="list-group-item" id="ans2"></li>
+                            <li class="list-group-item" id="ans3"></li>
+                            <li class="list-group-item" id="ans4"></li>
+                        </ul>
+                        <div id=" times-up-disp"></div>
+                    </div>
+                    <div id="game-over">
+                        <img src="assets/images/catinspace3.jpg">
+                        <p id="correct-answer" class="text-center">Correct Answers: </p>
+                        <p id="incorrect-answer" class="text-center">Incorret Answers: </p>
+                    </div>
+                    <div id="correct-ans" class="text-center">Yay you got that right!</div>
+                    <div id="wrong-ans" class="text-center">Oops you're wrong</div>
+                </div>
             </div>
         </div>
     </div>
@@ -47,7 +73,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
