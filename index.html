@@ -1,79 +1,80 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My Super Catastic Trivia Game!</title>
-    <meta name="description" content="text/html">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='icon' href='assets/images/favicon.ico' type='image/x-icon' />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='icon' href='assets/images/favicon.ico' type='image/x-icon' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+  <title>Catasctic Trivia Game</title>
+
 </head>
 
+<body>
 
-<body class="view"
-    style="background-image: url('assets/images/catinspace.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-
-    <div class=" container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-3">
-                <audio controls loop class="row justify-content-center m-3">
-                    <source src="assets/images/Kittycat.mp3" type="audio/mp3"></audio>
-            </div>
-        </div>
-        <div class="row d-flex justify-content-center" align="center">
-            <div class="jumbotron col-6">
-                <h1 class="text-align-center border-dark b-1 m-4">My Super Catastic Trivia Game!
-                </h1>
-                <p class="text-align-center">You have 5 seconds to answer each question</p>
-                <img src="assets/images/catinspace2.jpg" alt="cat in space">
-                <br>
-                <p class="text-align-center">Click meow to begin!</p>
-
-                <button type="button" class="btn btn-success text-align-center" id="start-btn">Meow!</button>
-            </div>
-        </div>
-        <div class="row  d-flex justify-content-center pt-5">
-            <div class="col-4">
-                <div class="card">
-                    <div id="ques-disp" class="card-header text-center">
-                        Hi
-                    </div>
-
-                    <div>
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item" id="ans1"></li>
-                            <li class="list-group-item" id="ans2"></li>
-                            <li class="list-group-item" id="ans3"></li>
-                            <li class="list-group-item" id="ans4"></li>
-                        </ul>
-                        <div id=" times-up-disp"></div>
-                    </div>
-                    <div id="game-over">
-                        <img src="assets/images/catinspace3.jpg">
-                        <p id="correct-answer" class="text-center">Correct Answers: </p>
-                        <p id="incorrect-answer" class="text-center">Incorret Answers: </p>
-                    </div>
-                    <div id="correct-ans" class="text-center">Yay you got that right!</div>
-                    <div id="wrong-ans" class="text-center">Oops you're wrong</div>
-                </div>
-            </div>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-2 justify-content-center">
+      <audio controls loop class="row justify-content-center m-3 mt-10">
+        <source src="assets/images/Kittycat.mp3" type="audio/mp3"></audio>
+    </div>
+    <div class="col-sm-5"></div>
+  </div>
+  <!--Start Screen-->
+  <div id="splashscreen">
+    <div class="splashBox rounded">
+      <h3>Welcome to</h3>
+      <h1>Catastic Trivia!</h1>
+      <img src="assets/images/catinspace2.jpg" alt="cat in space">
+      <hr />
+      <p>You have 60 seconds to guess 10 questions.</p>
+      <br />
+      <p>Click Meow to start</p>
+      <button type="button" id="start-btn" class="btn btn-dark">Meow!</button>
+    </div>
+  </div>
+  <!--Answer Screen-->
+  <div id="answerScreen">
+    <div class="splashBox2 rounded">
+      <h2>Lets see meow you did</h2>
+      <img src="assets/images/catinspace3.jpg">
+      <hr />
+      <p id="correctScreen">Correct Answers: </p>
+      <p id="wrongScreen">Wrong Answers: </p>
+    </div>
+  </div>
+  <!--Times up Screen-->
+  <div id="timesUp">
+    <div class="wrongBox rounded">
+      <h2 class="up">Times Up!</h2>
+      <img src="assets/images/catinspace4.jfif">
+      <hr />
+      <p>Here's your Score: </p>
+      <p id="correctTimesUp">Correct Answer: </p>
+      <p id="wrongTimesUp">Wrong Answers: </p>
+    </div>
+  </div>
+  <!--Main Container-->
+  <div class="container rounded">
+    <header>Catastic Trivia</header>
+    <div class="row timeRemain">Time Remaining:
+      <div id="time-remain">60</div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <script src="assets/javascript/app.js"></script>
+    <div class="questions">
+      <button type="button" class="btn btn-dark" id="sub-but">Submit</button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="./assets/javascript/app.js"></script>
 </body>
 
 </html>
