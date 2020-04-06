@@ -7,6 +7,7 @@ To run the application locally, first clone this repository with the following c
 ```
 git clone git@github.com:TimGangl/Catastic-Trivia-Game.git
 ```
+Once this is done then all you need to do is click on the index.html file in the repositories root folder and you are ready to play.
 
 ## Built With
 * HTML
