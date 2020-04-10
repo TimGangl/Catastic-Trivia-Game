@@ -19,7 +19,6 @@ Once this is done then all you need to do is click on the index.html file in the
 Screenshot of the Start page
 <br>
 ![Cat](cat.png)
-
 <br>
 Screenshot of questions
 <br>
