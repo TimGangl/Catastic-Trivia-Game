@@ -18,7 +18,7 @@ Once this is done then all you need to do is click on the index.html file in the
 ## Screenshot
 Screenshot of the Start page
 <br>
-![Catastic-Trivia](cat.png)
+![Cat](cat.png)
 
 <br>
 Screenshot of questions
